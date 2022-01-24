@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StarWarAPI\StarWarAPI.csproj" />
+    <PackageReference Include="StarWarAPI" Version="1.0.0" />
   </ItemGroup>
 
 </Project>

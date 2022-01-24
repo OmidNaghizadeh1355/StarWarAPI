@@ -5,7 +5,7 @@ using System.Text;
 
 namespace StarWarAPI.Core
 {
-    public class StarWarApiService
+    public class StarWarApiService : IStarWarApiService
     {
         private readonly ISharpTrooperCore _sharpTrooperCore;
         public StarWarApiService()
@@ -13,11 +13,11 @@ namespace StarWarAPI.Core
             _sharpTrooperCore = new StarWarAPI.Core.SharpTrooperCore();
         }
 
-        public IEnumerable<People> GetAllPeople()
+        private IEnumerable<People> GetAllPeople()
         {
             List<People> list = new List<People>();
             var people = _sharpTrooperCore.GetAllPeople();
-            
+
             list.AddRange(people.results);
 
             while (people.nextPageNo != null)
@@ -25,7 +25,23 @@ namespace StarWarAPI.Core
                 people = _sharpTrooperCore.GetAllPeople(people.nextPageNo);
                 list.AddRange(people.results);
             }
-            
+
+            return list;
+        }
+
+        public IEnumerable<Starship> GetAllStarships()
+        {
+            List<Starship> list = new List<Starship>();
+            var Starship = _sharpTrooperCore.GetAllStarships();
+
+            list.AddRange(Starship.results);
+
+            while (Starship.nextPageNo != null)
+            {
+                Starship = _sharpTrooperCore.GetAllStarships(Starship.nextPageNo);
+                list.AddRange(Starship.results);
+            }
+
             return list;
         }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace StarWarAPI.Entities
 {
@@ -82,6 +83,10 @@ namespace StarWarAPI.Entities
             set;
         }
 
+        public int IntCrew => Int32.Parse(String.IsNullOrEmpty(Regex.Replace(crew, "[^0-9]", "")) ?
+                                                "0" :
+                                                Regex.Replace(crew, "[^0-9]", ""));
+
         /// <summary>
         /// The maximum speed of this vehicle in atmosphere.
         /// </summary>
@@ -99,6 +104,10 @@ namespace StarWarAPI.Entities
             get;
             set;
         }
+
+        public int IntPassengers => Int32.Parse(String.IsNullOrEmpty(Regex.Replace(passengers, "[^0-9]", "")) ? 
+                                                "0": 
+                                                Regex.Replace(passengers, "[^0-9]", ""));
 
         /// <summary>
         /// The class of this vehicle, such as Wheeled.

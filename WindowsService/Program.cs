@@ -1,9 +1,9 @@
 ﻿//See https://aka.ms/new-console-template for more information
 
 Console.WriteLine("Hello, World!");
-star.Core.SwapiTools obj = new Swapi.Core.SwapiTools();
+StarWarAPI.Core.StarWarApiService obj = new StarWarAPI.Core.StarWarApiService();
 Console.WriteLine(DateTime.Now);
-var people = obj.GetAllPersons();
-Console.WriteLine(people.Count());
+var Starships = obj.GetAllStarships();
+Console.WriteLine(Starships.Count());
 Console.WriteLine(DateTime.Now);
 Console.ReadLine();
