@@ -1,15 +1,16 @@
 ﻿using Newtonsoft.Json;
-using SharpTrooper.Entities;
-using System;
-using System.Collections.Generic;
+using StarWarAPI.Entities;
 using System.Collections.Specialized;
-using System.IO;
 using System.Net;
 using System.Text;
 
-namespace SharpTrooper.Core
+/// <summary>
+/// This class is created by Olcay Bayram https://github.com/olcay.
+/// refactored by Omid Naghizadeh.
+/// </summary>
+namespace StarWarAPI.Core
 {
-    public class SharpTrooperCore
+    internal class SharpTrooperCore : ISharpTrooperCore
     {
         private enum HttpMethod
         {
@@ -76,7 +77,7 @@ namespace SharpTrooper.Core
         }
 
 
-        
+
 
         private T GetSingle<T>(string endpoint, Dictionary<string, string> parameters = null) where T : SharpEntity
         {

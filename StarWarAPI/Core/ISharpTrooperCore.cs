@@ -1,6 +1,6 @@
-﻿using SharpTrooper.Entities;
+﻿using StarWarAPI.Entities;
 
-namespace Swapi.Core
+namespace StarWarAPI.Core
 {
     internal interface ISharpTrooperCore
     {

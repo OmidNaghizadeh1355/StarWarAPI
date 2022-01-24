@@ -1,21 +1,21 @@
-﻿using SharpTrooper.Entities;
+﻿using StarWarAPI.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Swapi.Core
+namespace StarWarAPI.Core
 {
-    public class SwapiTools
+    public class StarWarApiService
     {
         private readonly ISharpTrooperCore _sharpTrooperCore;
-        public SwapiTools()
+        public StarWarApiService()
         {
-            _sharpTrooperCore = new Swapi.Core.SharpTrooperCore();
+            _sharpTrooperCore = new StarWarAPI.Core.SharpTrooperCore();
         }
 
         public IEnumerable<People> GetAllPeople()
         {
-            List<SharpTrooper.Entities.People> list = new List<SharpTrooper.Entities.People>();
+            List<People> list = new List<People>();
             var people = _sharpTrooperCore.GetAllPeople();
             
             list.AddRange(people.results);

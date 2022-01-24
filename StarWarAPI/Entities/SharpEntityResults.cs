@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SharpTrooper.Entities
+namespace StarWarAPI.Entities
 {
     public class SharpEntityResults<T> : SharpEntity where T : SharpEntity
     {

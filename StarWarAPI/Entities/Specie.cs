@@ -3,44 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SharpTrooper.Entities
+namespace StarWarAPI.Entities
 {
     /// <summary>
-    /// A vehicle.
+    /// A species within the Star Wars universe
     /// </summary>
-    public class Vehicle : SharpEntity
+    public class Specie : SharpEntity
     {
         /// <summary>
-        /// An array of People URL Resources that this vehicle has been piloted by.
+        /// An array of vehicle resources that this person has piloted
         /// </summary>
-        public List<string> pilots
+        public List<string> vehicles
         {
             get;
             set;
         }
 
         /// <summary>
-        /// The maximum length of time that this vehicle can provide consumables for it's entire crew without having to resupply.
+        /// The URL of a planet resource, a planet that this species originates from.
         /// </summary>
-        public string consumables
+        public string homeworld
         {
             get;
             set;
         }
 
         /// <summary>
-        /// The maximum number of kilograms that this vehicle can transport.
+        /// A comma-seperated string of common eye colors for this species, none if this species does not typically have eyes.
         /// </summary>
-        public string cargo_capacity
+        public string eye_colors
         {
             get;
             set;
         }
 
         /// <summary>
-        /// The name of this vehicle.
+        /// A comma-seperated string of common skin colors for this species, none if this species does not typically have skin.
         /// </summary>
-        public string name
+        public string skin_colors
         {
             get;
             set;
@@ -74,61 +74,16 @@ namespace SharpTrooper.Entities
         }
 
         /// <summary>
-        /// The number of personnel needed to run or pilot this vehicle.
+        /// An array of starship resources that this person has piloted
         /// </summary>
-        public string crew
+        public List<string> starships
         {
             get;
             set;
         }
 
         /// <summary>
-        /// The maximum speed of this vehicle in atmosphere.
-        /// </summary>
-        public string max_atmosphering_speed
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// The number of non-essential people this vehicle can transport.
-        /// </summary>
-        public string passengers
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// The class of this vehicle, such as Wheeled.
-        /// </summary>
-        public string vehicle_class
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// The cost of this vehicle new, in galactic credits.
-        /// </summary>
-        public string cost_in_credits
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// The model or official name of this vehicle. Such as All Terrain Attack Transport.
-        /// </summary>
-        public string model
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// The model or official name of this vehicle. Such as All Terrain Attack Transport.
+        /// An array of Film URL Resources that this species has appeared in.
         /// </summary>
         public List<string> films
         {
@@ -137,23 +92,66 @@ namespace SharpTrooper.Entities
         }
 
         /// <summary>
-        /// The manufacturer of this vehicle. Comma seperated if more than one.
+        /// The url of the species resource that this person is.
         /// </summary>
-        public string manufacturer
+        public List<string> people
         {
             get;
             set;
         }
 
         /// <summary>
-        /// The length of this vehicle in meters.
+        /// The classification of this species.
         /// </summary>
-        public string length
+        public string classification
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// The name of this species.
+        /// </summary>
+        public string name
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// The designation of this species.
+        /// </summary>
+        public string designation
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// The average height of this person in centimeters.
+        /// </summary>
+        public string average_height
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// The average lifespan of this species in years.
+        /// </summary>
+        public string average_lifespane
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// A comma-seperated string of common hair colors for this species, none if this species does not typically have hair.
+        /// </summary>
+        public string hair_colors
         {
             get;
             set;
         }
     }
 }
-
-

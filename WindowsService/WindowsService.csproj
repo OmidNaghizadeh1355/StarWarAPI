@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary\Swapi.csproj" />
+    <ProjectReference Include="..\StarWarAPI\StarWarAPI.csproj" />
   </ItemGroup>
 
 </Project>
