@@ -47,7 +47,7 @@ namespace StarWarAPI.Core
 
         public IEnumerable<People> GetAllPersons()
         {
-            var persons = GetAllPeople().Where(p => p.gender != "n/a");
+            var persons = GetAllPeople().Where(p => p.gender == "male" || p.gender == "female");
 
             return persons;
         }

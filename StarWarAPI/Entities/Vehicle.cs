@@ -56,6 +56,9 @@ namespace StarWarAPI.Entities
             set;
         }
 
+        public int Id => Int32.Parse(url.Split('/')[5]);
+
+
         /// <summary>
         /// the ISO 8601 date format of the time that this resource was created.
         /// </summary>
