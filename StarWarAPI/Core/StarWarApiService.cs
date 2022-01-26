@@ -29,7 +29,7 @@ namespace StarWarAPI.Core
             return list;
         }
 
-        public IEnumerable<Starship> GetAllStarships()
+        public IQueryable<Starship> GetAllStarships()
         {
             List<Starship> list = new List<Starship>();
             var Starship = _sharpTrooperCore.GetAllStarships();
@@ -42,14 +42,20 @@ namespace StarWarAPI.Core
                 list.AddRange(Starship.results);
             }
 
-            return list;
+            return (IQueryable<Starship>)list;
         }
 
-        public IEnumerable<People> GetAllPersons()
+        public IQueryable<People> GetAllPersons()
         {
             var persons = GetAllPeople().Where(p => p.gender == "male" || p.gender == "female");
 
-            return persons;
+            return (IQueryable<People>)persons;
+        }
+
+        public Starship GetStarshipById(string id)
+        {
+            var Starship = _sharpTrooperCore.GetStarship(id);
+            return Starship;
         }
 
     }
