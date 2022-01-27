@@ -4,7 +4,7 @@ namespace StarWarAPI.Core
 {
     public interface IStarWarApiService
     {
-        IQueryable<People> GetAllPersons();
+        IEnumerable<People> GetAllPersons();
         IQueryable<Starship> GetAllStarships();
         Starship GetStarshipById(string id);
     }

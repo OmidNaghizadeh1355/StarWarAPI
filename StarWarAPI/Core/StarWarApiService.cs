@@ -45,11 +45,11 @@ namespace StarWarAPI.Core
             return (IQueryable<Starship>)list;
         }
 
-        public IQueryable<People> GetAllPersons()
+        public IEnumerable<People> GetAllPersons()
         {
-            var persons = GetAllPeople().Where(p => p.gender == "male" || p.gender == "female");
+            var persons = GetAllPeople().Where(p => p.gender == "male" || p.gender == "female").ToList();
 
-            return (IQueryable<People>)persons;
+            return persons;
         }
 
         public Starship GetStarshipById(string id)
